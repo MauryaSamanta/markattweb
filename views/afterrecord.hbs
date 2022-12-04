@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/studentpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <title>MarkATT WEB</title>
+</head>
+<body class="body">
+    <div class="header">
+        <div class="head">
+            <img src="logo.png" alt="" class="logo">
+        </div>
+    </div>
+    <span class="message_holder">YOUR ATTENDANCE FOR {{demo.Date}} HAS BEEN RECORDED SUCCESSFULLY</span><br>
+    <div class="details_holder">
+        <div class="contentholder">
+        <span class="detail">NUMBER OF CLASSES HELD</span><br>
+        <span id="number1" class="data">{{demo.Noclass}}</span><br>
+        </div><br>
+        <div class="contentholder">
+        <span class="detail">NUMBER OF CLASSES YOU WERE PRESENT</span><br>
+        <span id="number2" class="data">{{demo.Present}}</span><br>
+        </div><br>
+        <div class="contentholder">
+        <span class="detail">YOUR ATTENDANCE PERCENTAGE</span><br>
+        <span id="number3" class="data">{{demo.Attper}}%</span><br>
+        </div>
+    </div>
+    <h3>Disclaimer: This is for indicative purposes only. For further details, contact HOD, LPM.</h3>
+</body>
+</html>

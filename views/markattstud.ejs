@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/public/studentpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <title>MarkATT WEB</title>
+</head>
+<script>
+function SetDate()
+{
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;
+
+
+document.getElementById('date').value = today;
+}
+</script>
+<body onload="SetDate()">
+    <div class="header">
+        <div class="head">
+            <img src="logo.png" alt="" class="logo">
+        </div>
+    </div>
+    <div class="body">
+        <form action="/" method="post">
+            <label for="date" class="label">DATE</label>
+            <input type="date" name="ENTERDATE" id="date" readonly><br>
+            <div class="drop">
+               
+
+               
+            <label for="subject">SUBJECT:</label>
+            <%details.forEach(notes=>{var x=notes.otp%>
+            <span name="subject" id="subject" readonly><%=notes.subject%></span><br>
+        
+              <!--<input type="text" name="subject" id="subject"><br>-->
+              </div>
+             <div class="otp">
+                <span class="msg" id="msg1"></span>
+                <input class="otpholder"  id="otp" name="otp" readonly>
+            </div>
+            
+
+            <%})%>
+            <button class="button" type="button" id="gen" onclick="check()">CHECK</button>
+            <button class="button" id="sub">SUBMIT</button>
+        </form>
+</body>
+
+</html>

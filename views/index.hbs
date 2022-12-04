@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkATT WEB</title>
+    <link type="text/css" rel="stylesheet" href="/masterpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+</head>
+<script>
+  function func(e){
+        event.preventDefault();
+    }
+    function generateotp(){
+    let x=Math.floor(1000+Math.random()*9000);
+    document.getElementById("msg1").innerHTML='Generated One Time Password';
+    document.getElementById("otp").value=x;
+    var sp=document.getElementById("time");
+    var date=document.getElementById("date").value;
+    document.getElementById("date2").value=date;
+   // document.getElementById('time').style.visiblity='visible';
+    document.getElementById('timer').innerHTML =
+  04 + ":" + 00;
+startTimer();
+
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  if(m<0){
+    return
+  }
+  if(m==0 && s==0)
+  {alert("OTP has expired. Please generate otp again.");
+  document.getElementById("otp").value=" ";
+  document.getElementById("date").value=" ";
+  document.getElementById("subject").value=" ";
+  }
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  console.log(m)
+  setTimeout(startTimer, 1000);
+  
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
+    }
+</script>
+
+<body>
+    <div class="header">
+        <div class="head">
+            <img src="logo.png" alt="" class="logo">
+        </div>
+    </div>
+    <div class="body">
+      <span class="message_holder">WELCOME TO DASHBOARD</span><br><br>
+        <form action="/index" method="post">
+         <label for="teacher" class="label">TEACHER:</label>
+            <input type="text" name="teacher" id="teacher" value="{{data.name}}" readonly><br><br>
+            <label for="date" class="label" pattern="\d{2}-\d{2}-\d{4}" readonly>DATE:</label>
+            <input type="date" name="ENTERDATE" id="date"><br>
+            <div class="drop">
+            <label for="subject">CHOOSE A SUBJECT:</label>
+            <select name="subject" id="subject">
+                
+                <option value="theory">Theory</option>
+                <option value="I">Practical Batch-I</option>
+                <option value="II">Practical Batch-II</option>
+                <option value="III">Practical Batch-III</option>
+                <option value="IV">Practical Batch-IV</option>
+                <option value="V">Practical Batch-V</option>
+              </select>
+              <!--<input type="text" name="subject" id="subject"><br>-->
+              </div>
+             <div class="otp">
+                <span class="msg" id="msg1"></span>
+                <input class="otpholder"  id="otp" name="otp"  readonly>
+            </div>
+            <button class="button" type="button" id="gen" onclick="generateotp()">GENERATE OTP</button>
+            <button class="button" id="sub" >START SESSION</button>
+        </form>
+        <!--<a href="/markattstud">CLICK ME</a>-->
+        <!--<div id="time" class="timerholder">OTP WILL BE ACTIVE FOR <span id="timer" class="timer"></span></div>-->
+        <form action="/delete" method="post">
+        <input type="hidden" id="date2" name="date2" pattern="\d{2}-\d{2}-\d{4}" >
+        <button class="button" >END SESSION</button>
+        </form>
+    </div>
+</body>
+</html>

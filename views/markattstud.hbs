@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/studentpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <title>MarkATT WEB</title>
+</head>
+<script>
+    function func(e){
+        event.preventDefault();
+    }
+function SetDate()
+{
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;
+
+
+document.getElementById('date').value = today;
+}
+</script>
+<body onload="SetDate()">
+    <div class="header">
+        <div class="head">
+            <img src="logo.png" alt="" class="logo">
+        </div>
+    </div>
+    <div class="body">
+        <span class="message_holder">WELCOME TO DASHBOARD!!</span><br><br>
+        <form action="/markattstud" method="post"  >
+            <label for="roll" class="label">ROLL NUMBER:</label>
+            <input type="text" name="roll" id="roll" value="{{demo.roll}}" readonly><br><br>
+            <label for="date" class="label">DATE:</label>
+            <input type="date" name="ENTERDATE" id="date" pattern="\d{2}-\d{2}-\d{4}" ><br>
+            <div class="drop">
+            <label for="subject">ENTER SUBJECT:</label>
+            <!--<input type="text" name="subject" id="subject" ><br>-->
+             <select name="subject" id="subject">
+                
+                <option value="theory">Theory</option>
+                <option value="practical">Practical </option>
+                
+              </select>
+              <!--<input type="text" name="subject" id="subject"><br>-->
+              </div>
+             
+                <span class="msg" id="msg1"></span>
+                <label for="otp" class="label">ENTER OTP:</label>
+                <input id="otp"   name="otp"><br>
+            
+            <button class="button" >SUBMIT</button>
+            
+        </form>
+          
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+.header{
+    background-color:rgb(208,225,255);
+    width:100%;
+    height:150px;
+    margin:0;
+    padding:30px;
+    margin-bottom:75px;
+    float:top;
+}
+.timerholder{
+   /* visibility:hidden;*/
+}
+.timer{
+    /*background-color:#419D78;*/
+    color:#c62020;
+    font-size:20px;
+    text-align:center;
+  }
+.head{
+    text-align:center;
+    align-content: center;
+}
+.logo{
+   
+}
+.msg{
+    display:none;
+    height:30px;
+    font-size:25px;
+}
+.drop{
+    margin:25px;
+    padding:15px;
+}
+#subject{
+    border-radius:5px;
+}
+.otp{
+    padding:15px;
+
+}
+.otpholder{
+    font-family: 'Signika Negative', sans-serif;
+    color:#0166fe;
+    /*font-size:150px;*/
+    border:none;
+    text-align:center;
+    cursor:auto;
+    font-size:150px;
+}
+.button{
+
+    border-radius:10px;
+    margin:45px;
+    padding:15px;
+    cursor:pointer;
+    border:none;
+    
+    font-family: 'Signika Negative', sans-serif;
+}
+.button:hover{
+    background-color:rgb(208,225,255);
+    transition: background-color 0.5s;
+    box-shadow: 2px 2px 2px black;
+    transition: box-shadow 0.5s;
+}
+
+.label{
+    padding:5px;
+    margin:10px;
+}
+input{
+     border-radius:5px;
+
+}
+.body{
+    font-family: 'Signika Negative', sans-serif;
+    text-align:center;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .header{
+        background-color:rgb(208,225,255);
+        width:100%;
+        height:150px;
+        margin:0;
+        padding:30px;
+        margin-bottom:75px;
+    }
+    .otp{
+        padding:15px;
+    }
+    .otpholder{
+        font-size:45px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .header{
+        background-color:rgb(208,225,255);
+        width:100%;
+        height:150px;
+        margin:0;
+        padding:30px;
+        margin-bottom:75px;
+    }
+    .otp{
+        padding:15px;
+    }
+    .otpholder{
+        font-size:55px;
+    }
+}
+@media only screen and (max-width:650px){
+    .logo{
+        width:205px;
+    }
+}
+@media only screen and (max-width:768px){
+    .logo{
+        width:305px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 305px) {
+    
+    .header{
+        background-color:rgb(208,225,255);
+        width:100%;
+        height:150px;
+        margin:0;
+        padding:30px;
+        margin-bottom:75px;
+    }
+    .otp{
+        padding:15px;
+    }
+    .otpholder{
+        font-size:38px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    
+    .header{
+        background-color:rgb(208,225,255);
+        width:100%;
+        height:150px;
+        margin:0;
+        padding:30px;
+        margin-bottom:75px;
+    }
+    .otp{
+        padding:15px;
+    }
+    .otpholder{
+        font-size:70px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .header{
+        background-color:rgb(208,225,255);
+        width:100%;
+        height:150px;
+        margin:0;
+        padding:30px;
+        margin-bottom:75px;
+    }
+    .otp{
+        padding:15px;
+    }
+    .otpholder{
+        font-size:85px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1100px) {
+    .header{
+        background-color:rgb(208,225,255);
+        width:100%;
+        height:150px;
+        margin:0;
+        padding:30px;
+        margin-bottom:75px;
+    }
+    .otp{
+        padding:15px;
+    }
+    .otpholder{
+        font-size:80px;
+    }
+}
+@media only screen and (min-width: 1350px) {
+    .header{
+        background-color:rgb(208,225,255);
+        width:100%;
+        height:150px;
+        margin:0;
+        padding:30px;
+        margin-bottom:75px;
+    }
+    .otp{
+        padding:15px;
+    }
+    .otpholder{
+        font-size:100px;
+    }
+}
+*{
+    margin:0;
+    box-sizing:border-box;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link type="text/css" rel="stylesheet" href="/studentpage.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <title>MarkATT WEB</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="head">
+            <img src="logo.png" alt="" class="logo">
+        </div>
+    </div>
+    <div class="details_holder">
+       
+        <div class="contentholder">
+            <form action="/login_page" method="post">
+            <div class="faculty_details">
+                <div>
+                <img src="teacher.png" alt="" class="icon" id="icon">
+                </div>
+                <div class="faculty">
+                <span>FACULTY LOGIN</span>
+                </div>
+              </div>  
+            
+                <label for="name" class="label_login" id="per_det">ENTER USERNAME</label>
+                <input class="login-input" type="text" name="uname" id="space" placeholder="Username"><br>
+                <label for="pw" class="label_login" id="per_det">ENTER PASSWORD</label>
+                <input class="login-input" type="password" name="pw" id="space" placeholder="Password">
+                <center><button id="login" class="button_login" >LOGIN</button></center>
+                
+            </form>
+        </div>
+        <div class="contentholder">
+            <form action="/student_login_page" method="post">
+            <div class="faculty_details">
+                <div>
+                <img src="graduated.png" alt="" class="icon">
+                </div>
+                <div class="faculty">
+                <span>STUDENT LOGIN</span>
+                </div>
+                </div>
+                <label for="name" class="label_login">ENTER USERNAME</label>
+                <input class="login-input" type="text" name="uname" placeholder="Username"><br>
+                <label for="pw" class="label_login">ENTER PASSWORD</label>
+                <input class="login-input" type="password" name="pw" placeholder="Password">
+                <center><button class="button_login" >LOGIN</button></center>
+            </form>
+        </div>
+    </div>
+   
+</body>
+</html>
