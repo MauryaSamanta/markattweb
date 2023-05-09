@@ -12,7 +12,7 @@ const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const { MongoClient } = require("mongodb");
 app.use(bodyParser.urlencoded({extended:true}));
-const teach_login=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.3oc0kuh.mongodb.net/Attendance");
+const teach_login=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.ivvqkp6.mongodb.net/Attendance");
 const loginSchema=new mongoose.Schema({
     name:String,
     password:String
@@ -23,7 +23,7 @@ const loginSchema=new mongoose.Schema({
 {collection:"users"});
 
 const Log=teach_login.model("users", loginSchema);
-const stud_login=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.3oc0kuh.mongodb.net/Attendance");
+const stud_login=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.ivvqkp6.mongodb.net/Attendance");
 const loginStudSchema=new mongoose.Schema({
     NameStud:String,
     RollNo:String
@@ -34,7 +34,7 @@ const loginStudSchema=new mongoose.Schema({
 {collection:"TStudents"});
 
 const LogStud=teach_login.model("TStudents", loginStudSchema);
-const otp=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.3oc0kuh.mongodb.net/date_otp");
+const otp=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.ivvqkp6.mongodb.net/date_otp");
 const notesSchema=new mongoose.Schema({
     date:String,
     subject:String,
@@ -45,7 +45,7 @@ const notesSchema=new mongoose.Schema({
 
 const Note=otp.model("Note", notesSchema);
 module.exports=Note;
-const record=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.3oc0kuh.mongodb.net/Attendance");
+const record=mongoose.createConnection("mongodb+srv://testUser:12345@cluster0.ivvqkp6.mongodb.net/Attendance");
 const TStudSchema=new mongoose.Schema({
     RollNo:String,
     Attper:String,
@@ -157,8 +157,7 @@ app.post("/markattstud", async(req,res)=>{
         var y=parts[0];
         var m=parts[1];
         var d=parts[2];
-        if(m<10)
-        m="0"+m;
+        
         
         var date=d+"-"+m+"-"+y;
 
@@ -218,8 +217,7 @@ app.post("/markattstud", async(req,res)=>{
         var y=parts[0];
         var m=parts[1];
         var d=parts[2];
-        if(m<10)
-        m="0"+m;
+        
         
         var date=d+"-"+m+"-"+y;
             np++;
@@ -291,7 +289,7 @@ app.post("/delete",async (req,res)=>{
         
         var nAb=0;
         if(sub==="theory")
-        {const uri="mongodb+srv://testUser:12345@cluster0.3oc0kuh.mongodb.net/Attendance";
+        {const uri= "mongodb+srv://testUser:12345@cluster0.ivvqkp6.mongodb.net/Attendance";
         const client=new MongoClient(uri);
          try{
             const database=client.db("Attendance");
@@ -322,8 +320,7 @@ app.post("/delete",async (req,res)=>{
                 var y=parts[0];
                 var m=parts[1];
                 var d=parts[2];
-                if(m<10)
-                m="0"+m;
+                
                 
                 var date=d+"-"+m+"-"+y;
                   let abRec=new TRec({
@@ -346,8 +343,7 @@ app.post("/delete",async (req,res)=>{
                 var y=parts[0];
                 var m=parts[1];
                 var d=parts[2];
-                if(m<10)
-                m="0"+m;
+                
                 
                 var date=d+"-"+m+"-"+y;
             Note.deleteOne({date:date},function(err,docs){
@@ -360,7 +356,7 @@ app.post("/delete",async (req,res)=>{
         }    
     }
     else{
-        const uri="mongodb+srv://testUser:12345@cluster0.3oc0kuh.mongodb.net/Attendance";
+        const uri="mongodb+srv://testUser:12345@cluster0.ivvqkp6.mongodb.net/Attendance";
         const client=new MongoClient(uri);
          try{
             const database=client.db("Attendance");
@@ -392,8 +388,7 @@ app.post("/delete",async (req,res)=>{
                 var y=parts[0];
                 var m=parts[1];
                 var d=parts[2];
-                if(m<10)
-                m="0"+m;
+                
                 
                 var date=d+"-"+m+"-"+y;
                   let abRec=new PrRec({
@@ -416,8 +411,7 @@ app.post("/delete",async (req,res)=>{
                 var y=parts[0];
                 var m=parts[1];
                 var d=parts[2];
-                if(m<10)
-                m="0"+m;
+                
                 
                 var date=d+"-"+m+"-"+y;
             Note.deleteOne({date:date},function(err,docs){
@@ -446,8 +440,7 @@ app.post("/index",async(req,res)=>{
         var y=parts[0];
         var m=parts[1];
         var d=parts[2];
-        if(m<10)
-        m="0"+m;
+       
         
         var rD=d+"-"+m+"-"+y;
         let newNote=new Note({
@@ -459,7 +452,7 @@ app.post("/index",async(req,res)=>{
     
     const otp=await newNote.save();
     if(req.body.subject!="theory"){
-    const uri="mongodb+srv://testUser:12345@cluster0.3oc0kuh.mongodb.net/Attendance";
+    const uri="mongodb+srv://testUser:12345@cluster0.ivvqkp6.mongodb.net/Attendance";
         const client=new MongoClient(uri);
         try {
             const database=client.db("Attendance");
