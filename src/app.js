@@ -177,7 +177,8 @@ app.post("/markattstud", async(req,res)=>{
           //console.log(p);
           //nc++;
           //var present=parseInt(p);
-          p++;
+          if(reg_status==="NOT REGISTERED")
+          {p++;
           nc++;
           att=Math.round((p/nc)*100);
           let newRec=new TRec({
@@ -208,7 +209,11 @@ app.post("/markattstud", async(req,res)=>{
          else{
             console.log("Wrong OTP");
          }
-
+        }
+        else
+        {
+            console.log("YOU HAVE BEEN ALREADY MARKED PRESENT FOR THIS SESSION");
+        }
         }//end of if for theory
         else if(req.body.subject=="practical"){
             
@@ -231,7 +236,7 @@ app.post("/markattstud", async(req,res)=>{
                nc=roll_check.Noclass;
                att=roll_check.Attper;
                reg_status=roll_check.REGISTRY;
-               if(reg_status==="NOT REGISTERED")
+               if(reg_status==="NOT REGISTERED" || reg_status==="BATCH")
               //console.log(p);
               //nc++;
               //var present=parseInt(p);
@@ -263,7 +268,7 @@ app.post("/markattstud", async(req,res)=>{
                //att=(p/nc)*100;
                //console.log(p);
               }else{
-                res.send("YOU ARE NOT FROM THIS BATCH")
+                res.send("YOU ARE NOT FROM THIS BATCH OR YOU HAVE ALREADY BEEN MARKED PRESENT FOR THIS SESSION");
               }}
              else{
                 console.log("Wrong OTP");
