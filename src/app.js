@@ -164,7 +164,7 @@ app.post("/markattstud", async(req,res)=>{
         const otp=req.body.otp;
         console.log(date);
         const date_check=await  Note.findOne({date:date});
-        if(date_check.otp === otp)
+        if((date_check.otp === otp) && (date_check.subject=="theory"))
         { console.log("Correct OTP");
             roll=req.body.roll;
             
@@ -207,12 +207,12 @@ app.post("/markattstud", async(req,res)=>{
            //console.log(p);
         }
          else{
-            console.log("Wrong OTP");
+            res.send("Wrong OTP Or Wrong Subject Chosen");
          }
         }
         else
         {
-            console.log("YOU HAVE BEEN ALREADY MARKED PRESENT FOR THIS SESSION");
+            res.send("YOU HAVE BEEN ALREADY MARKED PRESENT FOR THIS SESSION");
         }
         }//end of if for theory
         else if(req.body.subject=="practical"){
@@ -228,7 +228,7 @@ app.post("/markattstud", async(req,res)=>{
             np++;
             const otp=req.body.otp;
             const date_check=await  Note.findOne({date:date});
-            if(date_check.otp === otp)
+            if((date_check.otp === otp)&&(date_check.subject=="practical"))
             { console.log("Correct OTP");
                 roll=req.body.roll;
               const roll_check=await PRec.findOne({RollNo:roll});
@@ -268,7 +268,7 @@ app.post("/markattstud", async(req,res)=>{
                //att=(p/nc)*100;
                //console.log(p);
               }else{
-                res.send("YOU ARE NOT FROM THIS BATCH OR YOU HAVE ALREADY BEEN MARKED PRESENT FOR THIS SESSION");
+                res.send("YOU ARE NOT FROM THIS BATCH OR YOU HAVE ALREADY BEEN MARKED PRESENT FOR THIS SESSION OR WRONG CLASS CHOSEN");
               }}
              else{
                 console.log("Wrong OTP");
